@@ -14,7 +14,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController pass = TextEditingController();
   final TextEditingController repeatPass = TextEditingController();
 
-  // Validación completa de cédula ecuatoriana
+  // Validación cedula
   bool validarCedulaEcuatoriana(String cedula) {
     if (cedula.length != 10) return false;
     if (!RegExp(r'^[0-9]+$').hasMatch(cedula)) return false;
@@ -67,7 +67,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     return 'Ingrese su cédula';
                   }
                   if (!validarCedulaEcuatoriana(value)) {
-                    return 'Cédula ecuatoriana inválida';
+                    return 'Cédula inválida';
                   }
                   return null;
                 },
