@@ -11,6 +11,7 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Dashboard'),
         centerTitle: true,
+        automaticallyImplyLeading: false, // 👈 Quita la flecha atrás
         actions: [
           IconButton(
             icon: Icon(Icons.brightness_6),
@@ -26,8 +27,7 @@ class DashboardScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 60,
-              backgroundImage:
-                  AssetImage('assets/image/perfil.jpg'),
+              backgroundImage: AssetImage('assets/image/perfil.jpg'),
             ),
             SizedBox(height: 20),
 
