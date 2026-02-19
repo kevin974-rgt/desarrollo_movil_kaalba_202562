@@ -13,28 +13,24 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.lock_outline,
-                size: 90,
-                color: Theme.of(context).colorScheme.primary,
+              Image.asset(
+                'assets/image/inicio.jpg',
+                height: 140,
+                fit: BoxFit.contain,
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 20),
 
               Text(
-                'Bienvenido',
+                '👋 INICIAR SESIÓN 👍',
                 style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                ),
+                    fontSize: 26, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
 
               Text(
                 'Inicia sesión para continuar',
                 style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                ),
+                    fontSize: 16, color: Colors.grey),
               ),
               SizedBox(height: 30),
 
@@ -77,19 +73,31 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: Text(
-                    'Ingresar',
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  child: Text('Ingresar',
+                      style: TextStyle(fontSize: 16)),
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 20),
 
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/register');
-                },
-                child: Text('Crear cuenta'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('¿No tienes cuenta? '),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    child: Text(
+                      'Regístrate aquí',
+                      style: TextStyle(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .primary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
